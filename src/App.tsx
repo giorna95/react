@@ -8,6 +8,7 @@ import CounterWithObjectState from './components/CounterWithObjectState';
 import { MyCustomInput } from './components/MyCustomInput';
 import { MiddleComponent } from './components/MiddleComponent';
 import Incrementale from './components/Incrementale';
+import ToDoList from './components/toDoList/ToDoList';
 
 function calcolo(n:number){
   console.log(" esecuzione di calcolo con n:", n)
@@ -15,36 +16,40 @@ function calcolo(n:number){
 }
 
 export default function App() {
-  const [text, setText] = useState("");
-  const [value, setValue] = useState(10);
-  const risultato = useMemo(() => {
-    return calcolo(value);
-  },[value])
-  calcolo(value);
-  useEffect(()=>{
-    console.log("useEffect eventi di mount")
-  }, []);
+  // const [text, setText] = useState("");
+  // const [value, setValue] = useState(10);
+  // const risultato = useMemo(() => {
+  //   return calcolo(value);
+  // },[value])
+  // calcolo(value);
+  // useEffect(()=>{
+  //   console.log("useEffect eventi di mount")
+  // }, []);
 
-  console.log("App()")
+  // console.log("App()")
   
+  // return <>
+  //   <div>App</div>
+  //   {/* <CounterWithObjectState /> */}
+  //   {/* <TextComponent /> */}
+  //   {/* <Counter /> */}
+  //   {/* <Counter initialValue={value}/> */}
+  //   <Counter key={value}/>
+  //   <button onClick={()=>setValue(20)}>Imposta a 20</button>
+  //   <div>value:{value}</div>
+  //   <MiddleComponent onChange={text => {
+  //     // implementazione della callback
+  //     console.log(text);
+  //     setText(text);
+  //   }} />
+  //   {value !== 20 && <Incrementale />}
+  //   <div>Testo in App.tsx: {text}</div>
+  //   <div>Risultato operazione: {risultato}</div>
+  //   {/* <MyCustomInput label={"Cognome"} required={false} /> */}
+  // </>
+
   return <>
-    <div>App</div>
-    {/* <CounterWithObjectState /> */}
-    {/* <TextComponent /> */}
-    {/* <Counter /> */}
-    {/* <Counter initialValue={value}/> */}
-    <Counter key={value}/>
-    <button onClick={()=>setValue(20)}>Imposta a 20</button>
-    <div>value:{value}</div>
-    <MiddleComponent onChange={text => {
-      // implementazione della callback
-      console.log(text);
-      setText(text);
-    }} />
-    {value !== 20 && <Incrementale />}
-    <div>Testo in App.tsx: {text}</div>
-    <div>Risultato operazione: {risultato}</div>
-    {/* <MyCustomInput label={"Cognome"} required={false} /> */}
+    <ToDoList/>
   </>
 };
 
