@@ -21,7 +21,6 @@ export function MyCustomInput(props: {
                 <label>{label} {required === true && <span>*</span>}</label>
                 <input type="text" value={text} onChange={ev => {
                     setText(ev.target.value);
-
                     // Invocazione della callback
                     // passa al genitore il nuovo valore dell'input
                     onChange(ev.target.value);
